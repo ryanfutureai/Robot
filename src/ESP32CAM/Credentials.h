@@ -16,7 +16,9 @@ extern int bluetoothConnected;
 void BTInit();
 
 wl_status_t  connectToWiFi(String, String);
-void readCredentialsFromNvs(String&, String&);
+int readCredentialsFromNvs(String&, String&);
+void clearNVSandCommit(void);
+void ryansFalseCredentialTest(void);
 void writeCredentialsToNvs(String, String);
 bool getWifiInfoFromBt();
 

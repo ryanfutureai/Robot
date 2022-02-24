@@ -87,6 +87,7 @@ static camera_config_t camera_config = {
 };
 
 void ConnectCameraToWiFi() {
+    
     connectToWiFi(ssid, password); //try to connect with whatever credentials...if wrong this will fail quietly
 
     //WiFi.setSleep(WIFI_PS_NONE);
@@ -124,8 +125,8 @@ void setup() {
     s->set_quality(s, 20);
 
     BTInit();
-
-    Serial.println("Reading Credientials");
+    
+    Serial.println("Reading Credientials");    
     readCredentialsFromNvs(ssid, password);
 
     if (ssid != "") {
@@ -133,7 +134,7 @@ void setup() {
         SetupUDPResponder();
     }
     else {
-        Serial.println("No WiFi connection...use BlueTooth to connect");
+        Serial.println("No WiFi connection properly configured use BlueTooth to reconfigure");
     }
 }
 
